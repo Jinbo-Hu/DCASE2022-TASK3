@@ -1,0 +1,50 @@
+method: ein_seld
+dataset: dcase2022task3
+workspace_dir: ./
+dataset_dir: ./dataset
+dataset_synth: official
+hdf5_dir: ./_hdf5
+data:
+  type: foa
+  train_chunklen_sec: 5
+  train_hoplen_sec: 5
+  test_chunklen_sec: 5
+  test_hoplen_sec: 5
+  audio_feature: logmelIV
+  sample_rate: 24000
+  nfft: 1024
+  n_mels: 128
+  hoplen: 300
+  window: hann
+  salsalite:
+    fmin_doa: 50
+    fmax_doa: 2000
+    fmax_spectra: 9000
+training:
+  train_id: ein_seld_n1
+  model: ConvConformer
+  resume_model:
+  loss_type: all
+  loss_beta: 0.5
+  PIT_type: tPIT
+  batch_size: 32
+  overlap: 1&2&3
+  optimizer: adamw
+  lr: 0.0003
+  lr_step_size: 65
+  lr_gamma: 0.1
+  max_epoch: 80
+  train_fold: 0,1,2,3
+  valid_fold: 4
+  threshold_sed: 0.5
+  remark: None
+inference:
+  infer_id: ein_seld_n1
+  test_dataset: STARSS22
+  test_fold: 4
+  train_ids: ein_seld_n1
+  models: ConvConformer
+  batch_size: 4
+  threshold_sed: 0.5
+  model_mark: latest
+  remark: None
