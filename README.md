@@ -101,7 +101,7 @@ After downloading, you can delete downloaded_packages folder to save some space.
 
 Please consider citing our paper if you find this code useful for your research. 
 
-[1] Jinbo Hu, Yin Cao, Ming Wu, Qiuqiang Kong, Feiran Yang,  Mark D. Plumbley, and Jun Yang, "Sound Event Localization and Detection for Real Spatial Sound Scenes: Event-Independent Network and Data Augmentation Chains", submitted to DCASE 2022 Workshop. **(Update soon)**
+[1] Jinbo Hu, Yin Cao, Ming Wu, Qiuqiang Kong, Feiran Yang,  Mark D. Plumbley, and Jun Yang, "Sound Event Localization and Detection for Real Spatial Sound Scenes: Event-Independent Network and Data Augmentation Chains", submitted to DCASE 2022 Workshop. [*URL*](http://arxiv.org/abs/2209.01802)
 
 [2]. Jinbo Hu, Yin Cao, Ming Wu, Qiuqiang Kong, Feiran Yang,  Mark D. Plumbley, and Jun Yang, “A Track-Wise Ensemble Event Independent Network for Polyphonic Sound Event Localization and Detection,”,in Proc. IEEE ICASSP 2022, 2022, pp. 9196–9200. [*URL*](https://arxiv.org/abs/2203.10228)
 
