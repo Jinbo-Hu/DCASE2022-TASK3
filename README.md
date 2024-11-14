@@ -7,7 +7,7 @@ For more information about the challenge, please refer to [*DCASE Task3 website*
 
 ## Introduction
 
-Polyphonic sound event localization and detection (SELD) aims at detecting types of sound events with corresponding temporal activities and spatial locations. In DCASE 2022 Task 3, types of data transform from computationally generated spatial recordings to recordings of real-sound scenes. Our system submitted to the DCASE 2022 Task 3 is based on our previous proposed Event-Independent Network V2 (EINV2) and a novel data augmentation method. To mitigate the lack of real-scene recordings in the development dataset and the presence of sound events being unbalanced, we exploit FSD50K, AudioSet, and [*TAU Spatial Room Impulse Response Database (TAU-SRIR DB)*](https://zenodo.org/record/6408611) to generate simulated datasets for training. For more information, please read our papers [1,2].
+Polyphonic sound event localization and detection (SELD) aims at detecting types of sound events with corresponding temporal activities and spatial locations. In DCASE 2022 Task 3, types of data transform from computationally generated spatial recordings to recordings of real-sound scenes. Our system submitted to the DCASE 2022 Task 3 is based on our previously proposed Event-Independent Network V2 (EINV2) and a novel data augmentation method. To mitigate the lack of real-scene recordings in the development dataset and the presence of sound events being unbalanced, we exploit FSD50K, AudioSet, and [*TAU Spatial Room Impulse Response Database (TAU-SRIR DB)*](https://zenodo.org/record/6408611) to generate simulated datasets for training. For more information, please read our papers [1,2].
 
 Data augmentation methods are not provided yet.
 
@@ -48,7 +48,7 @@ It is needed to preprocess the data and label files. `.wav` files will be saved 
 bash ./scripts/preprocess.sh
 ```
 
-Preprocessing for track labels separate labels to different tracks, each with up to one event and a corresponding DoA. The same event is consistently put in the same track. Mode details about track permutation invariant training (PIT) and Event Independent Network (EIN) are described in [2,3].
+Preprocessing for track labels separate labels into different tracks, each with up to one event and a corresponding DoA. The same event is consistently put in the same track. Mode details about track permutation invariant training (PIT) and Event Independent Network (EIN) are described in [2,3].
 
 ### 2. Traning
 
@@ -58,11 +58,11 @@ To train a model yourself, setup  `./configs/ein_seld/seld.yaml` and directly ru
 bash ./scripts/train.sh
 ```
 
-The training is on a NVIDIA Geforce RTX 3090 GPU. If you have GPU memory error, try to reduce the batch size. Only training with GPU is supported.
+The training is on an NVIDIA Geforce RTX 3090 GPU. If you have a GPU memory error, try to reduce the batch size. Only training with GPU is supported.
 
 ### 3. Inference
 
-Inference part means predicting results and model outputs are saved in `./out_infer` folder. The saved results is the submission result for DCASE 2022 Task3. Directly run
+Inference part means predicting results and model outputs are saved in `./out_infer` folder. The saved results are the submission results for DCASE 2022 Task3. Directly run
 
 ```bash
 bash ./scripts/infer.sh
@@ -78,15 +78,15 @@ python3 code/compute_seld_metrics.py
 
 ## Data augmentation
 
-This part is also not yet fully completed. We will also release codes of this part as soon as possible.
+We update the data augmentation chains in this [repo](https://github.com/Jinbo-Hu/PSELDNets).
 
 ## Results
 
-- The performance of our our proposed models on validation set.
+- The performance of our proposed models on the validation set.
 
 <img src="images/performance.jpg" width="800">
 
-- Our system obtains the 2nd rank in teams ranking. For more information about the result please refer to the [*website*](https://dcase.community/challenge2022/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes-results).
+- Our system obtains the 2nd rank in the team ranking. For more information about the result please refer to the [*website*](https://dcase.community/challenge2022/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes-results).
 
 <img src="images/official_rank.jpg" width="1000">
 
@@ -95,7 +95,7 @@ If you have any question, please email to hujinbo2019@gmail.com or report an iss
 
 If you came across out of memory error, then try to reduce the batch size.
 
-After downloading, you can delete downloaded_packages folder to save some space.
+After downloading, you can delete the downloaded_packages folder to save some space.
 
 ## Cite
 
@@ -103,7 +103,7 @@ Please consider citing our paper if you find this code useful for your research.
 
 [1] Jinbo Hu, Yin Cao, Ming Wu, Qiuqiang Kong, Feiran Yang,  Mark D. Plumbley, and Jun Yang, "Sound Event Localization and Detection for Real Spatial Sound Scenes: Event-Independent Network and Data Augmentation Chains", submitted to DCASE 2022 Workshop. [*URL*](http://arxiv.org/abs/2209.01802)
 
-[2]. Jinbo Hu, Yin Cao, Ming Wu, Qiuqiang Kong, Feiran Yang,  Mark D. Plumbley, and Jun Yang, “A Track-Wise Ensemble Event Independent Network for Polyphonic Sound Event Localization and Detection,”,in Proc. IEEE ICASSP 2022, 2022, pp. 9196–9200. [*URL*](https://arxiv.org/abs/2203.10228)
+[2]. Jinbo Hu, Yin Cao, Ming Wu, Qiuqiang Kong, Feiran Yang,  Mark D. Plumbley, and Jun Yang, “A Track-Wise Ensemble Event Independent Network for Polyphonic Sound Event Localization and Detection,”, in Proc. IEEE ICASSP 2022, 2022, pp. 9196–9200. [*URL*](https://arxiv.org/abs/2203.10228)
 
 ```
 @inproceedings{hu2022,
@@ -136,3 +136,5 @@ Other codes may be helpful:
 1. https://github.com/yinkalario/EIN-SELD
 
 2. https://github.com/danielkrause/DCASE2022-data-generator
+
+3. https://github.com/Jinbo-Hu/PSELDNets
